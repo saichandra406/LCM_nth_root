@@ -44,7 +44,7 @@ void insert_sorted(SortedArray *s, uint64_t value, double log_p) {
         fprintf(stderr, "Array overflow!\n");
         exit(1);
     }
-                                                                                                                                                                              1,9           Top
+
     int pos = find_insert_position(s, value);
     memmove(&s->arr[pos + 1], &s->arr[pos], (s->size - pos) * sizeof(PrimePower));
     s->arr[pos].p_power = value;
@@ -91,7 +91,7 @@ void generate_primes(uint8_t *is_prime, uint64_t limit) {
 // Function to allocate memory and initialize it to all ones [cite: 3, 4, 5]
 void* calloc_ones(size_t nmemb, size_t size) {
     size_t total_size = nmemb * size;
-    void* ptr = malloc(total_size);                                                                                                                                                                          53,1          30%
+    void* ptr = malloc(total_size);
     if (ptr != NULL) {
         memset(ptr, 0xFF, total_size); // Initialize to all ones (0xFF) [cite: 4, 5]
     }
@@ -138,7 +138,7 @@ int main() {
             s.start_index++;
             }
         }
-                                                                                                                                                                              100,0-1       61%
+        
         double nth_root = von_mangoldt_sum / (double) n;
         //printf("n=%d: %.12f\n",n, exp(nth_root));
     }
